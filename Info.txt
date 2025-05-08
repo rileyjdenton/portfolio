@@ -1,0 +1,9 @@
+
+Riley Denton
+5/7/2025
+
+Github, Pycharm, Flask, (possible Heroku)
+Python, HTML, CSS, JavaScript
+
+Page order - Home, Bio, Projects, Resume, Contact
+
