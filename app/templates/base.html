@@ -4,24 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Riley Denton{% endblock %}</title>
-
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block styles %} {% endblock %}
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{{ url_for('index') }}">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('bio') }}">About Me</a></li>
+                <li><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li><a href="{{ url_for('resume') }}">Resume</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Me</a></li>
+                <li><a href="{{ url_for('admin') }}">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav>
-        <ul>
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Projects</li>
-            <li>Resume</li>
-            <li>Contact Me</li>
-        </ul>
-    </nav>
-    <!-- Page content will be inserted here -->
     {% block content %}
+
+    <!-- Page content will be inserted here -->
+
     {% endblock %}
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <footer>
+        <p>&copy; 2024 Riley Denton. All rights reserved</p>
+    </footer>
+    {% block scripts %}{% endblock %}
 </body>
 </html>
