@@ -10,30 +10,26 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="{{ url_for('index') }}">
-                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
-                </a>
-            </div>
             <ul class="nav-links">
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('bio') }}">About Me</a></li>
-                <li><a href="{{ url_for('projects') }}">Projects</a></li>
-                <li><a href="{{ url_for('resume') }}">Resume</a></li>
-                <li><a href="{{ url_for('contact') }}">Contact Me</a></li>
-                <li><a href="{{ url_for('admin') }}">Admin</a></li>
+                <li class="rd-logo"><a href="{{ url_for('index') }}">RD</a></li>
+                <li class="{% if request.endpoint == 'index' %}active{% endif %}"><a href="{{ url_for('index') }}">Home</a></li>
+                <li class="{% if request.endpoint == 'bio' %}active{% endif %}"><a href="{{ url_for('bio') }}">About Me</a></li>
+                <li class="{% if request.endpoint == 'projects' %}active{% endif %}"><a href="{{ url_for('projects') }}">Projects</a></li>
+                <li class="{% if request.endpoint == 'resume' %}active{% endif %}"><a href="{{ url_for('resume') }}">Resume</a></li>
+                <li class="{% if request.endpoint == 'contact' %}active{% endif %}"><a href="{{ url_for('contact') }}">Contact Me</a></li>
             </ul>
         </nav>
     </header>
-
+    <main>
     {% block content %}
+    
 
     <!-- Page content will be inserted here -->
 
     {% endblock %}
-
+    </main>
     <footer>
-        <p>&copy; 2024 Riley Denton. All rights reserved</p>
+        <p>&copy; 2025 Riley Denton. All rights reserved</p>
     </footer>
     {% block scripts %}{% endblock %}
 </body>
