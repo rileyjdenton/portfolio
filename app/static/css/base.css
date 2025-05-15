@@ -1,84 +1,94 @@
-footer {
-    text-align: center;
-    padding: 1pc 0;
-    background-color: #333;
-    color: white;
-    margin-top: auto;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    font-family : Arial, sans-serif;
+}
+
+nav {
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    alighn-items: center;
+}
+
+nav li {
     height: 50px;
-    width: 100%;
-    position: absolute;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-main {
-    flex: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-navbar {
+nav a {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    height: 50px
-}
-
-
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #333;
-    display: flex;              /* Add this */
-    align-items: center;        /* Center vertically */
-}
-
-li {
-    border-right: 1px solid white;
-}
-
-li a {
-    display: flex;
-    align-items: center;        /* Center vertically */
-    height: 100%;            /* Full height for the link */
-    padding: 14px 16px;
+    padding: 0 30px;
     text-decoration: none;
-    color: white;
-    text-align: center;
+    color: black;
 }
 
-li a:hover {
-    background-color: #0390fc;
+nav a:hover {
+    background-color: #f0f0f0;
 }
 
-li.active a {
-    background-color: #0390fc;
-    font-weight: bold;
+nav li:first-child{
+    margin-right: auto;
 }
 
-li:last-child {
-    border-right: none;
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
-.rd-logo {
-    font-size: 18px;
-    font-weight: bold;
-    padding-left: 20px;
-    padding-right: 30px; /* More spacing to the right */
-    border-right: 1px solid white;
-    background-color: #222; /* Optional: distinguish logo background */
+.sidebar li {
+    width: 100%;
 }
 
-.rd-logo a:hover {
-    color: white;
-    cursor: default;
-    background-color: inherit;
+.sidebar a {
+    width: 100%;
+}
+
+/* Hide menu button by default */
+.menu-button {
+    display: none;
+}
+
+
+/* For tablets bigger than mobile device but smaller than PC screen */
+@media (max-width: 750px) {
+    // Hide 
+    .hideonMobile {
+        display: none;
+    }
+    /* Show menu button when screen is small */
+    .menu-button {
+        display: block;
+    }
+
+}
+
+//For mobile
+@media (max-width: 350px) {
+    .sidebar{
+        width: 100%;
+    }
 }
