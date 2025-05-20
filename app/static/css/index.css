@@ -37,7 +37,7 @@
     width: calc(66.66% - 50px);
     height: 250px;
     animation: slide-right 0.5s ease-in-out both;
-    animation-delay: 0.5s;
+    animation-delay: 0.25s;
 }
 
 .four {
@@ -45,7 +45,6 @@
     width: calc(33.33% - 50px);
     height: 250px;
     animation: slide-left 0.5s ease-in-out both;
-    animation-delay: 0.75s;
 }
 
 .five {
@@ -53,7 +52,7 @@
     width: calc(100% - 70px);
     height: 150px;
     animation: slide-up 0.5s ease-in-out both;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 /* Container for layout */

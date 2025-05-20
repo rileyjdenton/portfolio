@@ -29,8 +29,7 @@ body {
 }
 
 nav {
-    background-color: #404040;
-    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.1);
+    padding-top: 100px;
 }
 
 nav ul {
@@ -55,7 +54,13 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #747474;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+nav a.active {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
 
 nav li:first-child{
@@ -91,7 +96,10 @@ nav li:first-child{
     display: none;
 }
 
-
+nav img {
+    width: 25px;
+    height: 20px;
+}
 /* For tablets bigger than mobile device but smaller than PC screen */
 @media (max-width: 750px) {
     /* Show sidebar when screen is small */
@@ -109,19 +117,4 @@ nav li:first-child{
     .sidebar{
         width: 100%;
     }
-}
-
-.center-info {
-    position: absolute;
-    align-content: center;
-    left: 50%;
-    transform: translateX(-50%);
-    pointer-events: none;
-    color: white;
-    font-size: 16px;
-    white-space: nowrap;
-}
-
-nav {
-    position: relative; /* Needed to anchor .center-info */
 }
