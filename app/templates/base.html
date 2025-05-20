@@ -7,23 +7,22 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     {% block styles %} {% endblock %}
 </head>
-<body>
+<body class="gradient-background">
     <nav>
         <ul class="sidebar">
             <li onClick=hideSidebar()><a href="#"><img src="{{ url_for('static', filename='images/close.png') }}"></a></li>
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('bio') }}">About</a></li>
             <li><a href="{{ url_for('projects') }}">Projects</a></li>
             <li><a href="{{ url_for('resume') }}">Resume</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
         <ul>
             <li><a href="{{ url_for('index') }}">RD</a></li>
+            <li class="center-info hideonMobile">
+                <span>Riley Denton &middot; rileyjdenton@outlook.com</span>
+            </li>
             <li class="hideonMobile"><a href="{{ url_for('index') }}">Home</a></li>
-            <li class="hideonMobile"><a href="{{ url_for('bio') }}">About</a></li>
             <li class="hideonMobile"><a href="{{ url_for('projects') }}">Projects</a></li>
             <li class="hideonMobile"><a href="{{ url_for('resume') }}">Resume</a></li>
-            <li class="hideonMobile"><a href="{{ url_for('contact') }}">Contact</a></li>
             <li class="menu-button" onclick="showSidebar()"><a href="#"><img src="{{ url_for('static', filename='images/menu.png') }}"></a></li>
         </ul>
     </nav>
@@ -35,9 +34,6 @@
 
     {% endblock %}
     </main>
-    <footer>
-        <p>&copy; 2025 Riley Denton. All rights reserved</p>
-    </footer>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
