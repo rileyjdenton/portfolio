@@ -20,14 +20,14 @@
 .one {
     background-color: green;
     width: calc(33.33% - 50px);
-    height: 250px;
+    height: 500px;
     animation: slide-right 0.5s ease-in-out both;
 }
 
 .two {
     background-color: blue;
     width: calc(66.66% - 50px);
-    height: 250px;
+    height: 500px;
     animation: slide-left 0.5s ease-in-out both;
     animation-delay: 0.25s;
 }
@@ -67,6 +67,33 @@
     gap: 30px;
 }
 
+.container-wrapper {
+    overflow: hidden;
+}
+
+@media screen and (max-width: 750px) {
+    .container {
+        width: 90%;
+    }
+
+    .item {
+        width: calc(100% - 30px);
+        height: 200px;
+    }
+
+    .one {
+        width: calc(100% - 30px);
+        height: 400px;
+    }
+    .two,
+    .three,
+    .four,
+    .five {
+        width: calc(100% - 30px);
+        height: 200px;
+    }
+    
+}
 /* Keyframes */
 @keyframes slide-right {
     0% {

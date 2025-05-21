@@ -29,7 +29,7 @@
             </li>
         </ul>
         <ul>
-            <li><a href="{{ url_for('index') }}">RD</a></li>
+            <li><a href="{{ url_for('index') }}" class = "RD">RD</a></li>
             <li class="hideonMobile"><a href="{{ url_for('index') }}" class="{% if current_path == url_for('index') %}active{% endif %}">Home</a></li>
             <li class="hideonMobile"><a href="{{ url_for('projects') }}" class="{% if current_path == url_for('projects') %}active{% endif %}">Projects</a></li>
             <li class="hideonMobile"><a href="{{ url_for('resume') }}" class="{% if current_path == url_for('resume') %}active{% endif %}">Resume</a></li>
