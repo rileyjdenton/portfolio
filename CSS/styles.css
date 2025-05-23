@@ -124,12 +124,12 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 100px 100px;
     border: 1px solid #ccc;
     margin: 0 auto;
     border-radius: 20px;
     width: 35%;
-    height: 400px;
+    height: auto;
+    padding: 40px 80px;
     margin-bottom: 50px;
 }
 
@@ -148,7 +148,7 @@ body {
 
 .languages {
     display: flex;
-    justify-content: space-evenly; /* or 'space-between' */
+    justify-content: space-between; /* or 'space-between' */
     align-items: center;
     padding: 10px 40px;
     gap: 20px;
