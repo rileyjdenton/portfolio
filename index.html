@@ -7,19 +7,19 @@
     <!-- For Montserrat font -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <link rel="stylesheet" href="/CSS/styles.css" />
-    <link rel="stylesheet" href="/CSS/projects.css" />
-    <link rel="stylesheet" href="/CSS/work.css" />
+    <link rel="stylesheet" href="/CSS/styles.css" /> <!-- For page styles and icon links -->
 </head>
 <body>
     <!-- Background animation -->
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
+    <div class="circle-container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
 
     <div class="container">
         <!-- div containing links to LinkedIn and Github-->
-        <div class="links">
+        <div class="links gradient-border">
             <a href="https://www.linkedin.com/in/riley-denton15" target="_blank">
                 <img src="./images/linkedin.png" alt="LinkedIn" class="linkedin-icon">
             </a>
@@ -29,7 +29,7 @@
         </div>
 
         <!-- div containing name, email, location, and short about me statement -->
-        <div class="item">
+        <div class="item1">
             <div class="intro">
                 <h1>Riley Denton</h1>
                 <h3>
@@ -51,7 +51,7 @@
                     Recent graduate eager to grow as a full-stack web developer, with a strong drive to learn and contribute to real-world projects.
                 </p>
                 <div class="resume-container">
-                    <a href="./document/rd_resume.docx" class="resume-link" download>Download Resume</a>
+                    <a href="./document/rd_resume.docx" class="resume-link gradient-border" download>Download Resume</a>
                 </div>
                 
             </div>
@@ -59,6 +59,9 @@
 
         <!-- div containing languages and frameworks used -->
         <div class="item2">
+            <div class="lang-header">
+                <h2>Languages & Frameworks</h2>
+            </div>
             <div class="languages">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg" alt="HTML" class="lang-icons gradient-border"/>
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain-wordmark.svg" alt="CSS" class="lang-icons gradient-border"/>
@@ -73,17 +76,45 @@
 
         <!-- div containing projects section -->
         <div class="item3">
-            <div class="projects">
-
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <h3>Registration</h3>
+                    <div class="project-card">
+                        <p>Pic of Registration project</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Recipe</h3>
+                    <div class="project-card">
+                        <p>Pic of Recipe Project</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Portfolio</h3>
+                    <div class="project-card">
+                        <p>Pic of Portfolio project</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- div containing work experience -->
         <div class="item4">
-            <div class="work">
-
+            <h2>Work Experience</h2>
+            <div class="job-card">
+                <h3>Technology Support Specialist II – Georgia College & State University</h3>
+                <p class="job-date">January 2023 – Current</p>
+                <ul class="job-details">
+                    <li>Troubleshot hardware and network issues for faculty and staff</li>
+                    <li>Managed software updates, account access, and support tickets</li>
+                    <li>Provided on-site technical assistance with a strong customer focus</li>
+                </ul>
             </div>
         </div>
+
+        <!-- Spacer for bottom of page -->
+        <div style="height: 100px"></div>
     </div>
 
     <script src="script.js"></script>

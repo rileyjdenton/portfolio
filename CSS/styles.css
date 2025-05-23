@@ -9,7 +9,6 @@
 /* Sets background and overflow style. */
 body {
   background-color: #1a1b2e;
-  overflow: hidden;
   position: relative;
 }
 
@@ -23,6 +22,17 @@ body {
       ) border-box;
     animation: 6s rotate linear infinite;
 }
+
+.circle-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Ensure circles are behind other content */
+  pointer-events: none; /* Prevent interaction with circles */
+}
 /* Shared circle styles */
 .circle {
   position: absolute;
@@ -32,7 +42,7 @@ body {
   height: 400px;
   background: radial-gradient(
     circle,
-    rgba(180, 200, 230, 0.08) 30%,  /* LightBlue tint */
+    rgba(133, 169, 223, 0.08) 30%,  /* LightBlue tint */
     transparent 100%
   );
   border-radius: 50%;
@@ -62,7 +72,13 @@ body {
     opacity: 0;
   }
   5% {
-    opacity: 0.4;
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 0.4
+  }
+  50% {
+    opacity: 0.6;
   }
   80% {
     transform: translate(-50%, -50%) scale(10);
@@ -87,61 +103,93 @@ body {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-
-  border: 3px solid #0000;
-    border-radius: 12px;
-    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
-        var(--angle),
-        #404040,
-        #0cb9ee
-      ) border-box;
-    animation: 6s rotate linear infinite;
 }
 
 /* Format icons */
 .linkedin-icon,
 .github-icon {
-    width: 55px;
-    height: 45px;
-    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 40px;
+    height: auto;
 }
 
-/* Container for all information */ 
+.linkedin-icon:hover,
+.github-icon:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+/* Container for all information */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #1a1b2e;
 }
 
 /* Each item box excluding icons */
-.item,
-.item2 {
+.item1 {
     background-color: #1a1b2e;
     display: flex;
-    box-sizing: border-box;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #ccc;
     margin: 0 auto;
     border-radius: 20px;
-    width: 35%;
+    width: 40%;
     height: auto;
     padding: 40px 80px;
     margin-bottom: 50px;
 }
 
-.item:first-child {
+.item1:first-child {
     margin-top: 100px;
+}
+
+.item2 {
+    background-color: #1a1b2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 20px;
+    width: 40%;
+    height: auto;
+    padding: 40px 80px;
+    margin-bottom: 50px;
+}
+
+.item3 {
+    background-color: #1a1b2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    border-radius: 20px;
+    width: 40%;
+    height: auto;
+    padding: 40px 80px;
+
+}
+
+.lang-header {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Styles inner items boxes */
 .intro,
 .languages {
     color: #fff;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -150,8 +198,6 @@ body {
     display: flex;
     justify-content: space-between; /* or 'space-between' */
     align-items: center;
-    padding: 10px 40px;
-    gap: 20px;
 }
 
 .languages img {
@@ -165,12 +211,12 @@ body {
 }
 
 .lang-icons {
-    width: 100px;
-    height: 100px;
-    padding: 20px;
+    width: 75px;
+    height: 75px;
+    padding: 10px;
 }
 
-/* Styles all headings and paragraph within intro */ 
+/* Styles all headings and paragraph within intro */
 .intro h1,
 .intro h3,
 .intro h4,
@@ -183,8 +229,9 @@ body {
 .flask-icon {
     fill: white;
 }
+
 .intro h1 {
-    font-size: 60px;
+    font-size: 40px;
 }
 
 /* to Format the icons */ 
@@ -207,26 +254,106 @@ body {
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
-    border: 3px solid #0000;
-    border-radius: 12px;
-    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
-        var(--angle),
-        #404040,
-        #0cb9ee
-      ) border-box;
-    animation: 6s rotate linear infinite;
 }
 
-/* Animation for resume button */
+/* Animation for gradient outline */
 @keyframes rotate {
   to {
     --angle: 360deg;
   }
 }
 
-/* Animation for resume button */
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
+}
+
+.item3 h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+
+.project-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #1a1b2e;
+    color: white;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.project h3{
+    color: #fff;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.item4 {
+    background-color: #1a1b2e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    margin: 50px auto 100px auto; /* adds space at bottom */
+    border-radius: 20px;
+    width: 40%;
+    padding: 40px 60px;
+}
+
+.item4 h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.job-card {
+    color: #fff;
+    text-align: left;
+    width: 100%;
+}
+
+.job-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.job-date {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.job-details {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 15px;
+    line-height: 1.6;
 }
