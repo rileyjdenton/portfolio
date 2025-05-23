@@ -116,14 +116,15 @@ body {
 }
 
 /* Each item box excluding icons */
-.item {
+.item,
+.item2 {
     background-color: #1a1b2e;
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-left: 100px;
+    padding: 100px 100px;
     border: 1px solid #ccc;
     margin: 0 auto;
     border-radius: 5px;
@@ -145,14 +146,31 @@ body {
     margin-bottom: 20px;
 }
 
+.languages {
+    display: flex;
+    justify-content: space-evenly; /* or 'space-between' */
+    align-items: center;
+    padding: 20px 40px;
+}
+
 .lang-h2 {
     padding-bottom: 20px;
 }
+
+.languages img {
+    margin-right: 20px;
+}
+
+.languages img:hover,
+.languages svg:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
 .lang-icons {
     width: 100px;
     height: 100px;
     padding: 20px;
-
 }
 
 /* Styles all headings and paragraph within intro */ 
