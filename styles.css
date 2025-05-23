@@ -30,7 +30,11 @@ body {
     border-radius: 5px;
     width: 35%;
     height: 400px;
-    margin-top: 100px
+    margin-bottom: 50px;
+}
+
+.item:first-child {
+    margin-top: 100px;
 }
 
 .intro {
@@ -61,13 +65,34 @@ body {
     height: 20px;
 }
 
+.resume-container {
+    padding-top: 20px;
+}
+
 .resume-link {
     text-decoration: none;
     color: #fff;
     font-size: 20px;
     font-weight: 600;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-padding-top:
+    border: 3px solid #0000;
+    border-radius: 12px;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+        var(--angle),
+        #404040,
+        #0cb9ee
+      ) border-box;
+    animation: 6s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
