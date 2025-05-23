@@ -1,3 +1,4 @@
+/* Presets page to no margin and padding. Sets everythignin border-box and font */
 * {
     margin: 0;
     padding: 0;
@@ -5,20 +6,118 @@
     font-family:'Montserrat', sans-serif;
 }
 
+/* Sets background and overflow style. */
 body {
-    background-color: #404040;
+  background-color: #1a1b2e;
+  overflow: hidden;
+  position: relative;
 }
 
+.gradient-border {
+    border: 3px solid #0000;
+    border-radius: 12px;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+        var(--angle),
+        #404040,
+        #0cb9ee
+      ) border-box;
+    animation: 6s rotate linear infinite;
+}
+/* Shared circle styles */
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(
+    circle,
+    rgba(180, 200, 230, 0.08) 30%,  /* LightBlue tint */
+    transparent 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  animation: pulseExpand 20s infinite ease-in-out;
+  animation-fill-mode: forwards;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Additional circles with staggered animation delays */
+.circle:first-child {
+  animation-delay: 2s;
+}
+.circle:nth-child(2) {
+  animation-delay: 8s;
+}
+.circle:nth-child(3) {
+  animation-delay: 14s;
+}
+
+/* Keyframes for circles. Starts at 0 opcaity, slowly increased then back to 0 to reset. */
+@keyframes pulseExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.4;
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(10);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Controls the icons at the top for LinkedIn and Github */
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* space between icons */
+  margin-top: 50px; /* space from top */
+  margin-bottom: 30px; /* space before .intro */
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  border: 3px solid #0000;
+    border-radius: 12px;
+    background: linear-gradient(#131219, #131219) padding-box, linear-gradient(
+        var(--angle),
+        #404040,
+        #0cb9ee
+      ) border-box;
+    animation: 6s rotate linear infinite;
+}
+
+/* Format icons */
+.linkedin-icon,
+.github-icon {
+    width: 55px;
+    height: 45px;
+    padding-right: 10px;
+}
+
+/* Container for all information */ 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-color: #404040;
+    background-color: #1a1b2e;
 }
 
+/* Each item box excluding icons */
 .item {
-    background-color: #404040;
+    background-color: #1a1b2e;
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
@@ -37,13 +136,26 @@ body {
     margin-top: 100px;
 }
 
-.intro {
+/* Styles inner items boxes */
+.intro,
+.languages {
     color: #fff;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
+.lang-h2 {
+    padding-bottom: 20px;
+}
+.lang-icons {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+
+}
+
+/* Styles all headings and paragraph within intro */ 
 .intro h1,
 .intro h3,
 .intro h4,
@@ -53,10 +165,14 @@ body {
     padding-bottom: 7.5px;
 }
 
+.flask-icon {
+    fill: white;
+}
 .intro h1 {
-    font-size: 50px;
+    font-size: 60px;
 }
 
+/* to Format the icons */ 
 .location-icon,
 .email-icon,
 .dot-icon {
@@ -69,6 +185,7 @@ body {
     padding-top: 20px;
 }
 
+/* Download Resume button */
 .resume-link {
     text-decoration: none;
     color: #fff;
@@ -85,12 +202,14 @@ body {
     animation: 6s rotate linear infinite;
 }
 
+/* Animation for resume button */
 @keyframes rotate {
   to {
     --angle: 360deg;
   }
 }
 
+/* Animation for resume button */
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
