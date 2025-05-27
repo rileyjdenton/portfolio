@@ -234,13 +234,14 @@ body {
     font-size: 40px;
 }
 
-/* to Format the icons */ 
+/* to Format the icons */
 .location-icon,
 .email-icon,
 .dot-icon {
     fill: red;
     width: 20px;
     height: 20px;
+    translate: 0 4px; /* Adjusts the icon position */
 }
 
 .resume-container {
@@ -408,3 +409,106 @@ body {
 .source-button:hover .github-icon {
     filter: invert(10%) sepia(90%) saturate(650%) hue-rotate(190deg) brightness(100%) contrast(120%);
 }
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+  background-color: #1a1b2e;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #0cb9ee;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+  color: white;
+  text-align: center;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+.slideshow-container img {
+  width: 100%;
+  max-height: 800px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #0cb9ee;
+  color: #1a1b2e;
+}
+
+.prev {
+  left: -20px;
+}
+
+.next {
+  right: -20px;
+}
+
+.close {
+  color: #ccc;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.stack {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.stack-icon,
+.stack svg {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Light icons on dark bg */
+  transition: transform 0.3s;
+}
+
+.stack-icon:hover,
+.stack svg:hover {
+  transform: scale(1.15);
+}
+

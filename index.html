@@ -86,8 +86,8 @@
             <div class="projects-container">
                 <div class="project">
                     <h3>Registration</h3>
-                    <div class="project-card">
-                        <img src="images/reg-degree.png" alt="Registration Project" class="project-image">
+                    <div class="project-card" onclick="openModal('registration')">
+                        <img src="images/registration/reg-degree.png" alt="Registration Project" class="project-image">
                     </div>
 
                     <a href="https://github.com/rileyjdenton/registration.git" class="source-button" target="_blank" rel="noopener noreferrer">
@@ -97,8 +97,8 @@
                 </div>
                 <div class="project">
                     <h3>Recipe</h3>
-                    <div class="project-card">
-                        <img src="images/recipe-home.png" alt="Recipe Project" class="project-image">
+                    <div class="project-card" onclick="openModal('recipe')">
+                        <img src="images/recipe/recipe-home.png" alt="Recipe Project" class="project-image">
                     </div>
 
                     <a href="https://github.com/rileyjdenton/recipe.git" class="source-button" target="_blank" rel="noopener noreferrer">
@@ -108,8 +108,8 @@
                 </div>
                 <div class="project">
                     <h3>Portfolio</h3>
-                    <div class="project-card">
-                        <img src="images/portfolio.png" alt="Portfolio Project" class="project-image">
+                    <div class="project-card" onclick="openModal('portfolio')">
+                        <img src="images/portfolio/portfolio.png" alt="Portfolio Project" class="project-image">
                     </div>
 
                     <a href="https://github.com/rileyjdenton/portfolio.git" class="source-button" target="_blank" rel="noopener noreferrer">
@@ -137,6 +137,19 @@
         <!-- Spacer for bottom of page -->
         <div style="height: 100px"></div>
         
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Project Title</h2>
+                <p id="modal-description">Project description goes here.</p>
+                <div class="slideshow-container">
+                    <img id="slideshow-image" src="" alt="Slideshow Image">
+                    <button class="prev" onclick="changeSlide(-1)">❮</button>
+                    <button class="next" onclick="changeSlide(1)">❯</button>
+                </div>
+                <div class="stack" id="stack-icons"></div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
