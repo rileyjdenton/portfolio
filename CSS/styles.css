@@ -276,11 +276,17 @@ body {
     margin-bottom: 20px;
 }
 
+.item3 h4 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
 .projects-container {
+    width: 120%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 40px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     padding: 40px;
 }
 
@@ -294,18 +300,30 @@ body {
 .project-card {
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 15px;
+    padding: 0;
     background-color: #1a1b2e;
     color: white;
     width: 100%;
     height: 150px;
     text-align: center;
+    overflow: hidden;
     transition: transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-card:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills card without distortion */
+    border-radius: 10px; /* Match the card's border-radius */
+    transition: transform 0.3s;
 }
 
 .project h3{
@@ -356,4 +374,37 @@ body {
     padding-left: 20px;
     font-size: 15px;
     line-height: 1.6;
+}
+
+.source-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 8px 16px;
+    border: 2px solid #0cb9ee;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #0cb9ee;
+    font-weight: 600;
+    background-color: transparent;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.source-button:hover {
+    background-color: #0cb9ee;
+    color: #1a1b2e;
+    transform: scale(1.05);
+}
+
+.source-button .github-icon {
+    width: 20px;
+    height: 20px;
+    filter: invert(56%) sepia(79%) saturate(604%) hue-rotate(165deg) brightness(93%) contrast(92%);
+    transition: filter 0.3s;
+}
+
+.source-button:hover .github-icon {
+    filter: invert(10%) sepia(90%) saturate(650%) hue-rotate(190deg) brightness(100%) contrast(120%);
 }
