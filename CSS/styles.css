@@ -410,8 +410,9 @@ body {
     filter: invert(10%) sepia(90%) saturate(650%) hue-rotate(190deg) brightness(100%) contrast(120%);
 }
 
+/* Popup for projects page. */
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -429,9 +430,21 @@ body {
   border: 2px solid #0cb9ee;
   border-radius: 10px;
   width: 80%;
-  max-width: 700px;
+  max-width: 1500px;
   color: white;
   text-align: center;
+}
+
+.modal-title {
+  font-size: 40px;
+}
+
+.modal-description {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 20px;
+  font-size: 20px;
 }
 
 .slideshow-container {
