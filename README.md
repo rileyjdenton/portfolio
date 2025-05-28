@@ -2,6 +2,8 @@
 
 Welcome to my personal portfolio site. This showcases some basic information about me, my projects I have worked on, and my work experience.
 
+# Link to live Demo - https://rileyjdenton.github.io/portfolio/
+
 ## Features
 
 - Animated homepage with animated icons.
