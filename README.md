@@ -19,7 +19,7 @@ Welcome to my personal portfolio site. This showcases some basic information abo
 
 # Contact
 
-Email - rileyjdenton@outlook.com
-LinkedIn - https://www.linkedin.com/in/rjdenton
+- Email - rileyjdenton@outlook.com
+- LinkedIn - https://www.linkedin.com/in/rjdenton
 
 Thank you for checking out my portfolio!
