@@ -563,7 +563,7 @@ body {
 }
 
 /* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1400px) {
     .item1,
     .item3,
     .item4 {
@@ -599,7 +599,3 @@ body {
     }
 }
 
-/* Laptops and up */
-@media (min-width: 1025px) {
-  
-}
